@@ -97,10 +97,18 @@ footer {
 
 footer > p {
   margin: 10px 0;
+  border-bottom: 1px solid #333;
+  padding-bottom: 3px;
 }
 
 footer > a {
   color: #333;
   text-decoration: none;
   margin: 10px 0;
+  display: block;
+}
+
+.second_a {
+  border-bottom: 1px solid #333;
+  padding-bottom: 3px;
 }
