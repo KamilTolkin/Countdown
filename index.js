@@ -1,8 +1,15 @@
 let interval = null;
 let remainingSeconds = 0;
+const dropdownElement= document.getElementById("dropdown")
 
 document.getElementById("control").addEventListener("click", () => {
   if (interval === null) {
+    if(dropdownElement.classList.contains("up")){
+      dropdownElement.innerHTML = `<span class="material-icons">expand_more</span>`
+      dropdownElement.classList.remove("up")
+      dropdownElement.classList.add("down")
+      document.querySelector(".input-div").classList.toggle("open")
+    }
     start();
   } else {
     stop();
@@ -22,6 +29,11 @@ document.getElementById("reset").addEventListener("click", () => {
     document.getElementById("inputminutes").value= ""
     document.getElementById("inputseconds").value= ""
   }
+});
+
+document.getElementById("dropdown").addEventListener("click", () => {
+  updateDropdown();
+
 });
 
 function updateInterfaceTime() {
@@ -58,6 +70,19 @@ function updateInterfaceControls() {
     document.querySelector(".timer__btn--control").classList.add("timer__btn--stop");
     document.querySelector(".timer__btn--control").classList.remove("timer__btn--start");
   }
+}
+
+function updateDropdown(){
+  if (dropdownElement.classList.contains("up")){
+    dropdownElement.innerHTML = `<span class="material-icons">expand_more</span>`
+    dropdownElement.classList.remove("up")
+    dropdownElement.classList.add("down")
+  }else{
+    dropdownElement.innerHTML = `<span class="material-icons">expand_less</span>`
+    dropdownElement.classList.add("up")
+    dropdownElement.classList.remove("down")
+  }
+  document.querySelector(".input-div").classList.toggle("open")
 }
 
 function start() {

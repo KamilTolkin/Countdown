@@ -12,19 +12,24 @@
     </head>
     <body>
         <div class="timer">
-            <span class="timer__part timer__part--hours" id="hours">00</span>
-            <span class="timer__part">:</span>
-            <span class="timer__part timer__part--minutes" id="minutes">00</span>
-            <span class="timer__part">:</span>
-            <span class="timer__part timer__part--seconds" id="seconds">00</span>
-            <button type="button" class="timer__btn timer__btn--control timer__btn--start" id="control">
+            <div class="timer__part--div">
+                <span class="timer__part timer__part--hours" id="hours">00</span>
+                <span class="timer__part">:</span>
+                <span class="timer__part timer__part--minutes" id="minutes">00</span>
+                <span class="timer__part">:</span>
+                <span class="timer__part timer__part--seconds" id="seconds">00</span>
+            </div>
+            <div class="timer__btn--div">
+                <button type="button" class="timer__btn timer__btn--control timer__btn--start" id="control">
                 <span class="material-icons">play_arrow</span>
-            </button>
-            <button type="button" class="timer__btn timer__btn--reset" id="reset">
+                </button>
+                <button type="button" class="timer__btn timer__btn--reset" id="reset">
                 <span class="material-icons">timer</span>
-            </button>
+                </button>
+                <button type="button" class="timer__btn timer__btn--dropdown down" id="dropdown"><span class="material-icons">expand_more</span></button>
+            </div>
         </div>
-        <div class="input">
+        <div class="input-div">
             <input class="input__hours" id="inputhours" type="number" placeholder="Hours">
             <input class="input__minutes" id="inputminutes" type="number" placeholder="Minutes">
             <input class="input__seconds" id="inputseconds" type="number" placeholder="Seconds">
